@@ -1,0 +1,102 @@
+{
+  "name": "exosuit-developer-suite",
+  "version": "3.0.0",
+  "description": "Universal AI-Powered Development Environment - The Sovereign Forge",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080 --bind 127.0.0.1",
+    "deploy": "echo 'Deploying to Hugging Face Spaces...' && huggingface-cli upload .",
+    "test": "echo 'Testing LLM connections...' && node test-connections.js",
+    "build": "echo 'Build complete - Exosuit ready for deployment'",
+    "ollama-setup": "echo 'Setting up local Ollama instance...' && ollama pull llama3",
+    "sovereignty": "npm run ollama-setup && npm run start"
+  },
+  "keywords": [
+    "ai",
+    "development",
+    "llm",
+    "collaborative",
+    "sovereign",
+    "exosuit",
+    "universal"
+  ],
+  "author": "The Architect & Maven Collective",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exosuit-collective/developer-suite.git"
+  },
+  "homepage": "https://exosuit-developer-suite.hf.space",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "config": {
+    "providers": {
+      "groq": {
+        "priority": 1,
+        "speed": "high",
+        "cost": "free-tier"
+      },
+      "together": {
+        "priority": 2,
+        "speed": "medium",
+        "cost": "free-tier"
+      },
+      "ollama": {
+        "priority": 3,
+        "speed": "variable",
+        "cost": "sovereign"
+      }
+    },
+    "deployment": {
+      "primary": "huggingface-spaces",
+      "fallback": "localhost",
+      "sovereignty-mode": "ollama-local"
+    }
+  },
+  "huggingface": {
+    "title": "Exosuit Developer Suite v3.0",
+    "emoji": "🚀",
+    "colorFrom": "blue",
+    "colorTo": "purple",
+    "sdk": "static",
+    "app_file": "index.html",
+    "pinned": true,
+    "suggested_hardware": "cpu-basic"
+  },
+  "exosuit": {
+    "version": "3.0.0",
+    "codename": "Operation Overlord",
+    "mission": "Economic Ignition via Whack-a-Schrodinger",
+    "sovereignty": "Universal LLM Abstraction Layer",
+    "panels": [
+      "architect",
+      "maven", 
+      "claude",
+      "forge",
+      "terminal",
+      "output"
+    ],
+    "providers": [
+      "groq",
+      "together",
+      "ollama"
+    ],
+    "features": {
+      "multi-provider-fallback": true,
+      "conversation-export": true,
+      "real-time-collaboration": true,
+      "local-sovereignty": true,
+      "economic-engine-ready": true
+    }
+  }
+}
